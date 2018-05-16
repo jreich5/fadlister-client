@@ -1,5 +1,5 @@
 const render = require('./render.js');
-const comps = require('./components/components.js');
+const pages = require('./pages/pages.js');
 
 /*
  * Function determines url search query for a given page and renders the page 
@@ -7,18 +7,21 @@ const comps = require('./components/components.js');
 const router = (pageContainer) => {
 
   const urlParams = new URLSearchParams(window.location.search);
-  let pageContent;
+  let page;
 
   switch(urlParams.get('page')) {
     case 'test':
-      pageContent = comps.buildTestPage;
+      page = pages.testPage;
       break;
     case 'categories':
-      pageContent = comps.buildCategoriesPage;
+      page = pages.categoriesPage;
+      break;
+    default:
+      page = pages.homePage;
       break;
   }
 
-  render(pageContent, pageContainer);
+  render(page, pageContainer);
 
 }
 

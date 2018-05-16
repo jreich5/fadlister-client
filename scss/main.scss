@@ -1,3 +1,18 @@
 body {
-	background: honeydew;
+	background: #004;
+  color: #999;
+}
+
+.faux-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.faux-link:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faux-link:active {
+  color: white;
 }
